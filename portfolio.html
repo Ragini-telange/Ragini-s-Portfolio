@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ragini's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<!-- Add in <head> before your <style> tag -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/MKjpdkF3/raginipic1.jpg"><style>
+    * { box-sizing: border-box; 
+        margin: 0;
+        padding: 0;}
+        body {
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
+  /* ...existing code... */
+}
+body {
+  background: linear-gradient(120deg, #232526, #414345, #e96443, #904e95, #2c5364, #203a43, #0f2027);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  /* ...existing code... */
+}
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+    body {
+        font-family: 'Poppins', 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+    
+    #canvas-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.7;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .about-me, .photography-me, .education-me, .skills-me, .certificates-me, .contact-me, .projects-me {
+      display: none;
+      padding: 60px 30px;
+      width: 90%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      animation: fadeIn 1s ease;
+      margin: 20px auto;
+      .about-me, .photography-me, .education-me, .skills-me, .certificates-me, .contact-me, .projects-me {
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  /* ...existing code... */
+}
+    }
+
+    /* Modified contact section to be more spacious */
+    .contact-me {
+      max-width: 1000px;
+      padding: 60px 40px;
+    }
+
+    .intro-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hi-text {
+      font-size: 56px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+      animation: typing 2.5s steps(10), blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #fff;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .welcome-text {
+      font-size: 22px;
+      color: #ddd;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+
+    .start-btn, .scroll-btn, .nav-tab {
+      background: #ff4b2b;
+      color: white;
+      padding: 10px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      margin: 5px;
+    }
+
+    .start-btn:hover, .scroll-btn:hover, .nav-tab:hover {
+      background: #ff416c;
+      transform: scale(1.05);
+    }
+
+    .start-btn::before, .scroll-btn::before, .nav-tab::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b, #ff416c);
+      transition: all 0.5s ease;
+      z-index: -1;
+      transform: scale(0);
+      border-radius: 50%;
+    }
+
+    .start-btn:hover::before, .scroll-btn:hover::before, .nav-tab:hover::before {
+      transform: scale(1);
+      border-radius: 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ffd700;
+      text-align: center;
+    }
+
+    a {
+      color: #00ffff;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+      margin: 10px 0;
+      border: 2px solid #fff;
+    }
+
+    .skill-bar { 
+      margin: 10px 0;
+    }
+    
+    .bar-title { 
+      font-weight: bold; 
+      margin-bottom: 5px; 
+      font-size: 14px;
+    }
+
+    .bar-container {
+      background-color: #444;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .bar {
+      padding: 5px;
+      color: white;
+      text-align: right;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      transition: width 1.5s ease-in-out;
+      font-size: 12px;
+      line-height: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 14px;
+      background: rgba(255,255,255,0.9);
+    }
+
+    textarea { 
+      resize: none; 
+      min-height: 150px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .certificate-grid, .photography-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .certificate-item, .photo-item {
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .certificate-item:hover, .photo-item:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+      animation: fadeIn 0.5s ease;
+      font-size: 14px;
+    }
+
+    .social-links a:hover {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      transform: translateY(-3px) rotate(10deg);
+      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+    }
+
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    /* Enhanced Contact Section Styles */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+    
+    .contact-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+      margin: 10px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .contact-card i {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+    
+    .contact-card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    
+    .contact-card p {
+      font-size: 14px;
+      color: #ddd;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    .submit-btn {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      width: 100%;
+      display: block;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    
+    .contact-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .contact-header p {
+      font-size: 16px;
+      color: #ddd;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Photography gallery styles - modified to match certificates layout */
+    .photo-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .photo-item {
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .photo-item img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #fff;
+    }
+    
+    .photo-item:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Category filter */
+    .category-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .filter-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    }
+    
+    /* Achievement badge */
+    .achievement-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(45deg, #ff8a00, #e52e71);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 15px;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    /* Projects section styles */
+    .project-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      background: rgba(255,255,255,0.15);
+    }
+    
+    .project-card h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    
+    .project-card ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    
+    .project-card li {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hi-text { font-size: 28px; }
+      h2 { font-size: 24px; }
+      .certificate-grid, .photography-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav-tab {
+        width: 80%;
+        margin: 5px 0;
+      }
+      .contact-card {
+        width: 100%;
+      }
+      .contact-me {
+        padding: 40px 20px;
+      }
+      .about-me, .photography-me, .education-me, .skills-me, .certificates-me, .projects-me {
+        padding: 40px 20px;
+      }
+    }
+
+    #scrollTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #scrollTopBtn:hover { background: #555; }
+    
+    /* Floating animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* Pulse animation for contact icons */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    /* New glow effect for important elements */
+    .glow {
+      animation: glow 2s infinite alternate;
+    }
+    
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 5px rgba(255,255,255,0.5);
+      }
+      to {
+        box-shadow: 0 0 20px rgba(255,255,255,0.8);
+      }
+    }
+    
+    /* Testimonial section */
+    .testimonial {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      position: relative;
+      border-left: 3px solid #ffd700;
+    }
+    
+    .testimonial::before {
+      content: '"';
+      font-size: 60px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      opacity: 0.2;
+    }
+    
+    .testimonial-author {
+      text-align: right;
+      font-style: italic;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Intro Section -->
+<div class="intro-section" id="introSection" data-aos="fade-up">
+  <div class="hi-text"><i class="fas fa-hand-peace"></i> Hi!!</div>
+  <p class="welcome-text"><i class="fas fa-code"></i> &lt;Welcome to My Portfolio&gt;</p>
+  
+  <div class="nav-tabs">
+    <button class="nav-tab" onclick="showSection('aboutMeSection')"><i class="fas fa-user"></i> About</button>
+    <button class="nav-tab" onclick="showSection('photographySection')"><i class="fas fa-camera"></i> Photography</button>
+    <button class="nav-tab" onclick="showSection('educationSection')"><i class="fas fa-graduation-cap"></i> Education</button>
+    <button class="nav-tab" onclick="showSection('skillsSection')"><i class="fas fa-tools"></i> Skills</button>
+    <button class="nav-tab" onclick="showSection('projectsSection')"><i class="fas fa-project-diagram"></i> Projects</button>
+    <button class="nav-tab" onclick="showSection('certificatesSection')"><i class="fas fa-certificate"></i> Certificates</button>
+    <button class="nav-tab" onclick="showSection('contactSection')"><i class="fas fa-envelope"></i> Contact</button>
+  </div>
+  
+  <button class="start-btn" onclick="startPortfolio()">Start Exploring</button>
+</div>
+
+<!-- About Me -->
+<div class="container">
+  <div class="about-me" id="aboutMeSection" data-aos="fade-up">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <img src="https://i.postimg.cc/MKjpdkF3/raginipic1.jpg" alt="Profile Picture" style="float: right; width:270px;">
+    <p>Hello...<br>I'm RAGINI DATTATRAY TELANGE  from Solapur (Kari).<br>
+      My aim is to create remarkable projects that solve real-world problems.<br>
+      I'm passionate about coding and problem solving, always eager to explore new technologies and algorithms.<br><br>
+      Right now, I'm learning [languages/skills you're working on – e.g., Python, HTML/CSS, JavaScript, Git], and I'm open to internships, collaborations, or just connecting with like-minded people!<br><br>
+      Beyond Academics, I keep interest in drawing & Photography.<br>
+       I love photography & art 🌸.<br>
+    
+    <div class="social-links">
+      <a href="https://www.instagram.com/_ragini.24" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/ragini-telange-012411358" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:raginitelange052@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/__clicks.rt18" target="_blank"><i class="fas fa-camera"></i></a>
+    </div>
+    <button class="scroll-btn" onclick="showSection('photographySection')">Photography <i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+</div>
+
+<!-- Photography Section -->
+<div class="container">
+  <div class="photography-me" id="photographySection" data-aos="fade-up">
+    <h2><i class="fas fa-camera"></i> My Photography</h2>
+    <div class="photo-card">
+      <h3>About My Photography</h3>
+      <p>Photography is my passion and creative outlet. I specialize in nature and portrait photography, capturing the beauty in everyday moments.</p>
+      <p>Follow my photography journey on Instagram: <a href="https://www.instagram.com/__clicks.rt18" target="_blank">@__clicks.rt18</a></p>
+    </div>
+    
+    <div class="category-filter">
+      <button class="filter-btn active" onclick="filterPhotos('all')">All</button>
+      <button class="filter-btn" onclick="filterPhotos('nature')">Nature</button>
+      <button class="filter-btn" onclick="filterPhotos('pet')">Pet</button>
+      <button class="filter-btn" onclick="filterPhotos('architecture')">Architecture</button>
+      <button class="filter-btn" onclick="filterPhotos('flower')">Flower</button>
+      
+    </div>
+    
+    
+    <div class="photo-grid">
+      <div class="photo-item" data-category="architecture">
+        <img src="https://i.postimg.cc/vTKsFv0t/camera1.jpg" alt="Architecture Photography">
+      </div>
+      <div class="photo-item" data-category="architecture">
+        <img src="https://i.postimg.cc/v83j1c85/temple.jpg" alt="Architecture Photography">
+      </div>
+      <div class="photo-item" data-category="nature">
+        <img src="https://i.postimg.cc/xCFC89XY/farm.jpg" alt="Nature Photography">
+      </div>
+      <div class="photo-item" data-category="architecture">
+        <img src="https://i.postimg.cc/DyptNmt7/cloud1.jpg" alt="Architecture Photography">
+      </div>
+      <div class="photo-item" data-category="architecture">
+        <img src="https://i.postimg.cc/K8wh14N0/alandi.jpg" alt="Architecture Photography">
+      </div>
+      <div class="photo-item" data-category="architecture">
+        <img src="https://i.postimg.cc/vT3pbmTL/cloud.jpg" alt="Architecture Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/Kz9KTns6/rose.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/T1pKJpzp/chafa.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/HngM0Qw3/leaf.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/gkLwwLy7/sunflower.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/BZkbGQWB/violet.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/6QngTcTQ/whitr.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="pet">
+        <img src="https://i.postimg.cc/ryxsM286/dog.jpg" alt="Pet Photography">
+      </div>
+      <div class="photo-item" data-category="pet">
+        <img src="https://i.postimg.cc/zGL9Y8rK/cat.jpg" alt="Pet Photography">
+      </div>
+      <div class="photo-item" data-category="nature">
+        <img src="https://i.postimg.cc/prX6GtC9/tree.jpg" alt="Nature Photography">
+      </div>
+      <div class="photo-item" data-category="nature">
+        <img src="https://i.postimg.cc/tR3WqMbc/moon.jpg" alt="Nature Photography">
+      </div>
+      <div class="photo-item" data-category="nature">
+        <img src="https://i.postimg.cc/zXphWHVS/coconut.jpg" alt="Nature Photography">
+      </div>
+      <div class="photo-item" data-category="nature">
+        <img src="https://i.postimg.cc/SxsMGQ90/road.jpg" alt="Nature Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/PJTLvdHR/pink.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/zvzBXpSm/small.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="nature">
+        <img src="https://i.postimg.cc/FFTFVyVR/jwari.jpg" alt="Nature Photography">
+      </div>
+      <div class="photo-item" data-category="nature">
+        <img src="https://i.postimg.cc/KYtvPC0S/trees.jpg" alt="Nature Photography">
+      </div>
+      <div class="photo-item" data-category="flower">
+        <img src="https://i.postimg.cc/qv3kr9Vh/yelloflo.jpg" alt="Flower Photography">
+      </div>
+      <div class="photo-item" data-category="architecture">
+        <img src="https://i.postimg.cc/v8KFm3vW/swami.jpg" alt="Architecture Photography">
+      </div>
+      Capturing moments that tell stories. Here's a collection of my favorite shots.
+    </div>
+    
+    
+    <button class="scroll-btn" onclick="showSection('educationSection')">Education <i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+</div>
+
+<!-- Education -->
+<div class="container">
+  <div class="education-me" id="educationSection" data-aos="fade-up">
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    <p>
+      <p>
+        <b>Secondary School Certificate (SSC)</b>
+        Shree Shivaji Vidayalaya, Kari |Completed in [2021]<br>
+        Achieved excellent academic results 91.82 % .<br><br>
+
+        <b>Higher Secondary Certificate (HSC)</b>
+        Maharashtra Vidyalaya, Barshi |Completed in [2023]<br>
+        Completed higher secondary education with a strong foundation in Physics, Chemistry, and Mathematics.<br><br>
+
+        <b>Bachelor of Technology (B.Tech) in Computer Engineering</b><br>
+        MIT Acadamy of Engineering Alandi, Pune | 2024-2028<br>
+        Received merit-based scholarship for academic excellence in First Year.<br>
+        Apart from regular studies, I actively participate in technical events, projects,Workshop and club activity.<br>
+        Complete online certificate in Al,Python,C alongside regular coursework.<br><br>
+
+       <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/ragini-telange-012411358" target="_blank">Connect with me</a><br>
+       <b>Email:</b> <a href="mailto:raginitelange052@gmail.com">raginitelange052@gmail.com</a><br>
+       <b>Email:</b> <a href="mailto:202401040067@mitaoe.ac.in">202401040067@mitaoe.ac.in</a>
+    </p>
+    
+    <!-- Testimonial -->
+    <div class="testimonial">
+      <p><b>1st Year :</b>
+        Foundation year – learn basics of coding, math, and engineering. Explore different tech fields and join clubs.<br>
+
+        
+        <b>2nd Year :</b>
+        Build core CS skills like data structures and algorithms. Start real projects and explore internships or open-source.<br>
+        
+       <b>3rd Year :</b>
+        Specialize in your area of interest (web dev, AI, etc.). Work on major projects, build your resume, and apply for internships.<br>
+        
+        <b>4th Year :</b>
+        Focus on final-year project and placements. Polish your portfolio and secure your first job or higher studies.<br>
+        
+        </p>
+      <div class="testimonial-author">- Four year B.tech Goals</div>
+    </div>
+    
+    <button class="scroll-btn" onclick="showSection('skillsSection')">Skills <i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+</div>
+
+<!-- Skills -->
+<div class="container">
+  <div class="skills-me" id="skillsSection" data-aos="fade-up">
+    <h2><i class="fas fa-tools"></i> Skills</h2>
+    <div class="skill-bar"><div class="bar-title">C</div><div class="bar-container"><div class="bar" style="width: 90%; background: #4caf50;">90%</div></div></div>
+    <div class="skill-bar"><div class="bar-title">C++</div><div class="bar-container"><div class="bar" style="width: 85%; background: #2196f3;">85%</div></div></div>
+    <div class="skill-bar"><div class="bar-title">Python</div><div class="bar-container"><div class="bar" style="width: 55%; background: #ff9800;">55%</div></div></div>
+    <div class="skill-bar"><div class="bar-title">HTML</div><div class="bar-container"><div class="bar" style="width: 70%; background: #9c27b0;">70%</div></div></div>
+    <div class="skill-bar"><div class="bar-title">CSS</div><div class="bar-container"><div class="bar" style="width: 40%; background: #00bcd4;">40%</div></div></div>
+    <div class="skill-bar"><div class="bar-title">Linux</div><div class="bar-container"><div class="bar" style="width: 60%; background: #795548;">60%</div></div></div>
+    <div class="skill-bar"><div class="bar-title">PowerPoint</div><div class="bar-container"><div class="bar" style="width: 80%; background: #ff5722;">80%</div></div></div>
+    <div class="skill-bar"><div class="bar-title">Photography</div><div class="bar-container"><div class="bar" style="width: 75%; background: #607d8b;">75%</div></div></div>
+    
+    <button class="scroll-btn" onclick="showSection('projectsSection')">Projects <i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+</div>
+
+<!-- Projects Section -->
+<div class="container">
+  <div class="projects-me" id="projectsSection" data-aos="fade-up">
+    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+    
+    <div class="project-card">
+      <h3>🤖 Chatbot using Python</h3>
+      <p>A simple chatbot built using VS code that responds answer of specific question user related tree plantation. This Chatbot Vruksha make for help people who want to greener Choice.</p>
+      <ul>
+        <li><strong>Tools:</strong> Python,CSS,HTML,JAVA</li>
+        <li><strong>Skills:</strong> Python scripting,HTML knowledge,CSS styling.</li>
+        <li><strong>Features:</strong> Basic conversation flow, keyword recognition, simple responses.</li>
+        <li><strong>Code:</strong> <a href="https://drive.google.com/file/d/1i1i5o7FXdoWDvaMC8oR9QjM_CFhwFTk8/view?usp=drivesdk" target="_blank">Code Chatbot_Vruksha</a></li>
+        <li><strong>Code:</strong> <a href="https://drive.google.com/file/d/1iGOrC4b4ForkJqNfq6dFklbZFiIMKh0c/view?usp=drivesdk" target="_blank">Vedio Chatbot_Vruksha</a></li>
+      </ul>
+    </div>
+    
+    <div class="project-card">
+      <h3>📊 Presentation on Design Thinking Project</h3>
+      <p>The presentation on topic Crowd managment at Railway station is our group project.</p>
+      <ul>
+        <li><strong>Tools:</strong> Canva</li>
+        <li><strong>Skills:</strong> Research, slide design, presentation flow, technical communication</li>
+        <li><strong>Topics Covered:</strong> Interview with user,Passenger Complaint,Passengers Survey,Analysis by google form,Conclution.</li>
+        <li><strong>Link:</strong> <a href="https://drive.google.com/file/d/15wnDINGzF6uUsaCcutyuj85Th9RWKQ92/view?usp=drivesdk" target="_blank">View Presentation</a></li>
+      </ul>
+    </div>
+    
+    <div class="project-card">
+      <h3>🌐Group project Website vruksha</h3>
+      <p>The website you're currently viewing! work in progress.</p>
+      <ul>
+        <li><strong>Tools:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Skills:</strong> Web development, responsive design, UI/UX principles</li>
+        <li><strong>Features:</strong> Interactive elements, smooth animations, responsive layout</li>
+        <li><strong>Link:</strong> <a href="https://docs.google.com/presentation/d/1iDciwkpT0R52gsdjIgkRTc227n8T8thI/edit?usp=drivesdk&ouid=105607930433512791322&rtpof=true&sd=true" target="_blank">View PPT</a></li>
+        <li><strong>Code:</strong> <a href="https://drive.google.com/file/d/1iBpSzfgMc1GhDdHboeTtKJVKqk5Ucpgn/view?usp=drivesdk" target="_blank">Website Vedio</a></li>
+      </ul>
+    </div>
+    
+    <button class="scroll-btn" onclick="showSection('certificatesSection')">Certificates <i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+</div>
+
+<!-- Certificates -->
+<div class="container">
+  <div class="certificates-me" id="certificatesSection" data-aos="fade-up">
+    <h2><i class="fas fa-certificate"></i> Certificates</h2>
+    <p>My Certificates:</p>
+    <div class="certificate-grid">
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/Dz5v87S0/c.jpg" alt="C Certificate">
+      </div>
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/sXN34K9R/datathon.jpg" alt="Datathon">
+      </div>
+      
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/BbP4YDMP/simplelearn.jpg" alt="Simplilearn">
+      </div>
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/gr9dfJTS/greatlearning.jpg" alt="Great Learning">
+      </div>
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/9XD95nkZ/python1.jpg" alt="Python">
+      </div>
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/sfbhVJF8/python2.jpg" alt="Python">
+      </div>
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/FH4kSsHV/py.jpg" alt="C Certificate">
+      </div>
+      <div class="certificate-item">
+        <img src="https://i.postimg.cc/Hk9c9DJD/cbasic.jpg" alt="C Certificate">
+      </div>
+      <div class="certificate-item" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1);">
+        <p>More coming soon!</p>
+      </div>
+    </div>
+    
+    <button class="scroll-btn" onclick="showSection('contactSection')">Contact Me <i class="fa-solid fa-arrow-down"></i></button>
+  </div>
+</div>
+
+<!-- Contact Me -->
+<div class="container">
+  <div class="contact-me" id="contactSection" data-aos="fade-up">
+    <div class="contact-header">
+      <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+      <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
+    </div>
+    
+    <div class="contact-info">
+      <div class="contact-card pulse">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>raginitelange052@gmail.com</p>
+      </div>
+      
+      <div class="contact-card pulse">
+        <i class="fas fa-university"></i>
+        <h3>College Email</h3>
+        <p>202401040067@mitaoe.ac.in</p>
+      </div>
+      
+      <div class="contact-card pulse">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location</h3>
+        <p>Solapur, Maharashtra</p>
+      </div>
+    </div>
+    
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" rows="5" placeholder="I'd love to hear from you!" required></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+    
+    <div class="social-links" style="margin-top: 30px;">
+      <a href="https://www.instagram.com/_ragini.24" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/ragini-telange-012411358" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:raginitelange052@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/__clicks.rt18" target="_blank"><i class="fas fa-camera"></i></a>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+  AOS.init();
+
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#ffffff" },
+      shape: { type: "circle", polygon: { nb_sides: 5 } },
+      opacity: { value: 0.5 },
+      size: { value: 3, random: true },
+      line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+      move: { enable: true, speed: 4 }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "grab" },
+        onclick: { enable: true, mode: "push" }
+      },
+      modes: {
+        grab: { distance: 200, line_linked: { opacity: 0.7 } },
+        push: { particles_nb: 4 }
+      }
+    },
+    retina_detect: true
+  });
+
+  function startPortfolio() {
+    document.getElementById('introSection').style.display = 'none';
+    document.querySelectorAll('.container')[0].style.display = 'flex';
+    document.getElementById('aboutMeSection').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showSection(id) {
+    document.getElementById('introSection').style.display = 'none';
+    document.querySelectorAll('.about-me, .photography-me, .education-me, .skills-me, .certificates-me, .contact-me, .projects-me')
+      .forEach(sec => sec.style.display = 'none');
+      
+    document.querySelectorAll('.container').forEach(cont => {
+      cont.style.display = 'none';
+    });
+    
+    const targetContainer = document.querySelector(`#${id}`).parentNode;
+    targetContainer.style.display = 'flex';
+    document.getElementById(id).style.display = 'block';
+    
+    window.scrollTo({
+      top: targetContainer.offsetTop,
+      behavior: 'smooth'
+    });
+  }
+
+  // Photo filtering function
+  function filterPhotos(category) {
+    const photos = document.querySelectorAll('.photo-item');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    
+    // Update active button
+    filterBtns.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.textContent.toLowerCase().includes(category) || 
+          (category === 'all' && btn.textContent === 'All')) {
+        btn.classList.add('active');
+      }
+    });
+    
+    // Filter photos
+    photos.forEach(photo => {
+      if (category === 'all' || photo.dataset.category === category) {
+        photo.style.display = 'block';
+      } else {
+        photo.style.display = 'none';
+      }
+    });
+  }
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Create a nice confirmation message
+    const confirmation = document.createElement('div');
+    confirmation.innerHTML = `
+      <div style="background: rgba(0,200,100,0.2); padding: 15px; border-radius: 10px; margin-top: 20px; text-align: center;">
+        <i class="fas fa-check-circle" style="color: #4CAF50; font-size: 30px;"></i>
+        <h3 style="color: #4CAF50; margin: 10px 0;">Thank you, ${name}!</h3>
+        <p>Your message has been sent successfully.</p>
+        <p>I'll get back to you soon at ${email}.</p>
+      </div>
+    `;
+    
+    // Replace form with confirmation
+    const form = document.getElementById('contactForm');
+    form.parentNode.insertBefore(confirmation, form);
+    form.style.display = 'none';
+    
+    // Reset form after showing confirmation
+    setTimeout(() => {
+      form.reset();
+      form.style.display = 'block';
+      confirmation.remove();
+    }, 5000);
+  });
+
+  // Scroll to top button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function () {
+    scrollTopBtn.style.display = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
+  };
+  scrollTopBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  
+  // Animate skill bars when they come into view
+  const skillBars = document.querySelectorAll('.bar');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 100);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  skillBars.forEach(bar => {
+    observer.observe(bar);
+  });
+  
+  // Add pulse animation to contact cards on hover
+  const contactCards = document.querySelectorAll('.contact-card');
+  contactCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('pulse');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('pulse');
+    });
+  });
+  
+  // Add glow effect to important elements
+  const importantElements = document.querySelectorAll('.hi-text, h2, .achievement-badge');
+  importantElements.forEach(el => {
+    el.classList.add('glow');
+  });
+</script>
+</body>
+</html>
